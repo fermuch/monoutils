@@ -4,8 +4,8 @@ export function myID(): string {
 
 export function currentLogin(): string {
   return (
-    env.project.currentLogin?.maybeCurrent?.key ||
-    env.project.currentLogin?.maybeCurrent?.$modelId ||
+    env.project?.currentLogin?.maybeCurrent?.key ||
+    env.project?.currentLogin?.maybeCurrent?.$modelId ||
     env.currentLogin?.key ||
     env.currentLogin?.$modelId ||
     ""

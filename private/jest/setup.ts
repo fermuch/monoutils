@@ -11,7 +11,10 @@
 (global as any).data = {
   DEVICE_ID: 'TEST',
 };
+
 // const env: DynamicData['env'];
+(global as any).env = {}; // TODO!
+
 // const messages: TypedEmitter<EventArgs>;
 // const uuid: v4;
 // const when: FNArgs;
