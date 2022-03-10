@@ -17,11 +17,23 @@ export function currentLogin(): string {
 }
 
 export function emit(ev: BaseEvent) {
+  if (typeof emitEventGlobally === "function") {
+    try {
+      emitEventGlobally(ev);
+      return true;
+    } catch (e) {
+      platform.log("Error sending event");
+      platform.log(e);
+      // try with messages instead of returning here
+    }
+  }
+
   try {
     return messages.emit("onEvent", ev);
   } catch (e) {
     platform.log("Error sending message");
     platform.log(String(e));
-    return false;
   }
+
+  return false;
 }

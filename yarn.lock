@@ -982,10 +982,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@fermuch/telematree@^9.15.0":
-  version "9.15.0"
-  resolved "https://registry.yarnpkg.com/@fermuch/telematree/-/telematree-9.15.0.tgz#3e9b00e33bc6817f33e0b2dc3b76edf8a7394063"
-  integrity sha512-IlOHCBTLB3pMq86ihOZnj69BRWgfc7v0O4kt1FyNW5bONE2hAsmACxf6C+o45BsHmCz1kyRtAO8sLlof2IaImQ==
+"@fermuch/telematree@^9.16.0":
+  version "9.16.0"
+  resolved "https://registry.yarnpkg.com/@fermuch/telematree/-/telematree-9.16.0.tgz#c751aab5beff4a124024d86afe6c0ee6e2530037"
+  integrity sha512-kXqUAZp0ISshfWwnF/v5+ojyW+9hXZZfw7CjFtRbyVGZ/clUgwV2M8jUGGux5ZdZ+CDD0Z1Lejs6u68pqPxjTQ==
   dependencies:
     "@stablelib/snappy" "^1.0.1"
     eta "^1.12.3"

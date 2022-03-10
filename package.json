@@ -84,7 +84,7 @@
     ]
   },
   "dependencies": {
-    "@fermuch/telematree": "^9.15.0",
+    "@fermuch/telematree": "^9.16.0",
     "lodash": "^4.17.21",
     "typed-emitter": "^2.1.0"
   }

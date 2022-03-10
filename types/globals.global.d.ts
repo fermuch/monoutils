@@ -1,5 +1,6 @@
 import TypedEmitter from "typed-emitter"
 import { KnowPlatformTools as KnownPlatformTools, DataProperty, DynamicData, FN_PROPS, FNArgs, EventArgs } from '@fermuch/telematree/dist/tree/dynamic_data';
+import { BaseEvent } from '@fermuch/telematree/dist/events/base_event';
 import { ScriptWithInstance } from '@fermuch/telematree/dist/tree/dynamic_data/script_with_instance';
 import telematree from '@fermuch/telematree/dist/library';
 
@@ -29,6 +30,7 @@ declare global {
   const data: DataProperty;
   const env: DynamicData['env'];
   const messages: TypedEmitter<EventArgs>;
+  const emitEventGlobally: (event: BaseEvent) => void;
   const uuid: v4;
   const when: FNArgs;
 
