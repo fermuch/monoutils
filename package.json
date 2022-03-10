@@ -75,7 +75,7 @@
       "jsx",
       "node"
     ],
-    "setupFiles": [
+    "setupFilesAfterEnv": [
       "<rootDir>/private/jest/setup.ts"
     ]
   },
