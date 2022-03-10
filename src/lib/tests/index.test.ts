@@ -1,5 +1,5 @@
-import MyLibrary from '../index';
+import * as MonoUtils from '../index';
 
-it('Runs without crashing', () => {
-  new MyLibrary();
+it('returns an string for myID()', () => {
+  expect(MonoUtils.myID()).toBe("TEST");
 });
