@@ -38,7 +38,10 @@ type StringKeys<T> = T extends Record<string, unknown>
 export function get<
   Conf extends Record<string, unknown>,
   K extends string = DeepKeys<Conf>
->(path: K, defaultValue: GetDictValue<K, Conf> | undefined = undefined): GetDictValue<K, Conf> | undefined {
+>(
+  path: K,
+  defaultValue: GetDictValue<K, Conf> | undefined = undefined
+): GetDictValue<K, Conf> | undefined {
   const conf = getConfig<Conf>();
   if (!conf) {
     return defaultValue;
