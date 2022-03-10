@@ -1,8 +1,26 @@
 // const global: ScriptGlobal;
 
+const _mockStorage = new Map<string, string | number | boolean>();
+
 (global as any).platform = {
   log(...args: any[]) {
     console.log(...args);
+  },
+  // phone-only
+  set(key: string, val: string | number | boolean) {
+    _mockStorage.set(key, val);
+  },
+  delete(key: string) {
+    _mockStorage.delete(key);
+  },
+  getString(key: string) {
+    return _mockStorage.get(key) as string;
+  },
+  getBoolean(key: string) {
+    return _mockStorage.get(key) as boolean;
+  },
+  getNumber(key: string) {
+    return _mockStorage.get(key) as number;
   }
 };
 
