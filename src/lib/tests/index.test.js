@@ -14,6 +14,22 @@ describe("tools", () => {
     const result = MonoUtils.currentLogin()
     expect(result).toBe("1234");
   });
+
+  it("calls messages.emit", () => {
+    global.messages.emit = jest.fn();
+
+    class TestEvent {
+      kind = 'test-event';
+      getData() {
+        return {}
+      }
+    }
+    const ev = new TestEvent();
+
+    MonoUtils.emit(ev)
+    expect(global.messages.emit).toHaveBeenCalled();
+    expect(global.messages.emit).toHaveBeenCalledWith('onEvent', ev);
+  })
 })
 
 describe("storage", () => {

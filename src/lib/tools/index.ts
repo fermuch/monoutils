@@ -1,3 +1,5 @@
+import { BaseEvent } from "@fermuch/telematree";
+
 export * as storage from "./storage";
 
 export function myID(): string {
@@ -12,4 +14,14 @@ export function currentLogin(): string {
     env.currentLogin?.$modelId ||
     ""
   );
+}
+
+export function emit(ev: BaseEvent) {
+  try {
+    return messages.emit('onEvent', ev);
+  } catch (e) {
+    platform.log('Error sending message');
+    platform.log(String(e));
+    return false;
+  }
 }
