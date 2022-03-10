@@ -4,6 +4,9 @@
   "description": "Utilities for Monoflow",
   "main": "build/index.js",
   "types": "build/types/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "webpack serve --config webpack.config.demo.js",
     "build": "webpack && tsc",
