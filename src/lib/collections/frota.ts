@@ -23,7 +23,8 @@ export interface FrotaCollection {
  * @returns {CollectionDoc<FrotaCollection> | null}
  */
 export function getFrotaDoc(): CollectionDoc<FrotaCollection> | null {
-  const col = env.project?.collectionsManager?.ensureExists?.<FrotaCollection>("frota");
+  const col =
+    env.project?.collectionsManager?.ensureExists?.<FrotaCollection>("frota");
   if (!col) return null;
   return col.get(myID());
 }
