@@ -77,3 +77,11 @@ describe("storage", () => {
     expect(MonoUtils.storage.getNumber("key")).toBe(NaN);
   })
 })
+
+// TODO!
+xdescribe("collections", () => {
+  it("returns frota collection", () => {
+    const col = MonoUtils.collections.getFrotaDoc();
+    expect(col).toBeTruthy();
+  })
+})
