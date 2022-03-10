@@ -1,17 +1,29 @@
 {
-    "compilerOptions": {
-      "noImplicitAny": true,
-      "outDir": "build/types",
-      "module": "esnext",
-      "target": "es5",
-      "allowJs": true,
-      "sourceMap": true,
-      "declaration": true,
-      "emitDeclarationOnly": true,
-      "suppressImplicitAnyIndexErrors": true,
-      "lib": ["es2018", "dom"],
-      "moduleResolution": "node",
-    },
-    "include": ["src/lib"],
-    "exclude": ["src/lib/**/tests"],
+  "compilerOptions": {
+    "outDir": "./build/types",
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "module": "commonjs",
+    "target": "ES3",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "esModuleInterop": true,
+    "lib": [
+      "es2016",
+      "DOM"
+    ],
+    "moduleResolution": "node",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ]
+  },
+  "exclude": [
+    "./node_modules/@types/node",
+    "./node_modules/@fermuch/telematree"
+  ]
 }

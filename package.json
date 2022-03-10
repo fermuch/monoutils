@@ -74,5 +74,9 @@
       "jsx",
       "node"
     ]
+  },
+  "dependencies": {
+    "@fermuch/telematree": "^9.15.0",
+    "typed-emitter": "^2.1.0"
   }
 }
