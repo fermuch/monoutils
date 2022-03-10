@@ -1,8 +1,6 @@
 import { default as lGet } from "lodash/get";
 
-type Config = Record<string, unknown>;
-
-export function getConfig<T extends Record<string, unknown>>(): Partial<T> {
+export function getConfig<T>(): Partial<T> {
   const conf = getSettings?.() as Partial<T>;
   if (!conf) {
     return {} as Partial<T>;
@@ -36,7 +34,7 @@ type StringKeys<T> = T extends Record<string, unknown>
   : string;
 
 export function get<
-  Conf extends Record<string, unknown>,
+  Conf,
   K extends string = DeepKeys<Conf>
 >(
   path: K,
