@@ -30,10 +30,10 @@ type DeepKeys<T> = T extends Record<string, unknown>
 // eslint-disable-next-line @typescript-eslint/ban-types
 export class Config<Conf extends object> {
   public readonly store: Partial<Conf>;
-  
+
   constructor() {
     if (typeof getSettings === "function") {
-      this.store = getSettings?.() as Partial<Conf> || {};
+      this.store = (getSettings?.() as Partial<Conf>) || {};
     } else {
       this.store = {};
     }
@@ -41,12 +41,14 @@ export class Config<Conf extends object> {
 
   get<K extends DeepKeys<Conf>>(
     path: K,
-    defaultValue: GetDictValue<K, Conf> | undefined = undefined,
+    defaultValue: GetDictValue<K, Conf> | undefined = undefined
   ): GetDictValue<K, Conf> | undefined {
     if (!this.store) {
       return defaultValue;
     }
 
-    return lGet(this.store, path, defaultValue) as GetDictValue<K, Conf> | undefined;
+    return lGet(this.store, path, defaultValue) as
+      | GetDictValue<K, Conf>
+      | undefined;
   }
 }
