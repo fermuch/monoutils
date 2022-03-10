@@ -1,6 +1,6 @@
 /*!
  * 
- *   @fermuch/monoutils v0.0.1
+ *   @fermuch/monoutils v0.0.2
  *   https://github.com/fermuch/monoutils.git
  *
  *   Copyright (c) Fernando Mumbach (https://github.com/fermuch) and project contributors.
