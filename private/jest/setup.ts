@@ -41,6 +41,16 @@ beforeEach(() => {
   // const when: FNArgs;
 
   (global as any).script = undefined;
-  (global as any).settings = () => ({});
-  (global as any).getSettings = () => ({});
+
+  const testSettings = {
+    isTest: true,
+    isDebug: true,
+    foo: {
+      bar: {
+        zaz: 'zaz'
+      }
+    }
+  };
+  (global as any).settings = () => testSettings;
+  (global as any).getSettings = () => testSettings;
 })

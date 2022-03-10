@@ -85,3 +85,20 @@ xdescribe("collections", () => {
     expect(col).toBeTruthy();
   })
 })
+
+describe("config", () => {
+  it("returns config", () => {
+    const settings = MonoUtils.config.getConfig();
+    expect(settings).toBeTruthy();
+  })
+
+  it("returns config.get(path, defaultValue)", () => {
+    const val = MonoUtils.config.get("isTest", false);
+    expect(val).toBe(true);
+  })
+
+  it("returns config.set(path, value) for deep path", () => {
+    const val = MonoUtils.config.get(["foo", "bar", "zaz"], "test");
+    expect(val).toBe("zaz");
+  })
+})
