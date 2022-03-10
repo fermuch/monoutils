@@ -33,10 +33,7 @@ type StringKeys<T> = T extends Record<string, unknown>
     }
   : string;
 
-export function get<
-  Conf,
-  K extends DeepKeys<Conf>
->(
+export function get<Conf, K extends DeepKeys<Conf>>(
   path: K,
   defaultValue: GetDictValue<K, Conf> | undefined = undefined
 ): GetDictValue<K, Conf> | undefined {
