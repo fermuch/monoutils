@@ -13,7 +13,7 @@ export function getConfig<T extends Record<string, unknown>>(): Partial<T> {
 
 export function get<Conf extends Config, T = null>(
   path: string[],
-  defaultValue: T = null,
+  defaultValue: T = null
 ): T {
   const conf = getConfig<Conf>();
   if (!conf) {
