@@ -1,4 +1,4 @@
-import {default as lGet} from 'lodash/get';
+import { default as lGet } from "lodash/get";
 
 type Config = Record<string, unknown>;
 
@@ -11,7 +11,10 @@ export function getConfig<T extends Record<string, unknown>>(): Partial<T> {
   return conf;
 }
 
-export function get<Conf extends Config, T>(path: string[], defaultValue: T): T {
+export function get<Conf extends Config, T>(
+  path: string[],
+  defaultValue: T
+): T {
   const conf = getConfig<Conf>();
   if (!conf) {
     return defaultValue;
