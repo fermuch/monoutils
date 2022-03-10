@@ -11,9 +11,9 @@ export function getConfig<T extends Record<string, unknown>>(): Partial<T> {
   return conf;
 }
 
-type Concat<K extends string, P extends string> = `${K}${'' extends P
-  ? ''
-  : '.'}${P}`;
+type Concat<K extends string, P extends string> = `${K}${"" extends P
+  ? ""
+  : "."}${P}`;
 
 type GetDictValue<T extends string, O> = T extends `${infer A}.${infer B}`
   ? A extends keyof O
@@ -27,7 +27,7 @@ type DeepKeys<T> = T extends Record<string, unknown>
   ? {
       [K in keyof T]-?: `${K & string}` | Concat<K & string, DeepKeys<T[K]>>;
     }[keyof T]
-  : '';
+  : "";
 
 type StringKeys<T> = T extends Record<string, unknown>
   ? {
@@ -39,10 +39,7 @@ export function get<
   Conf extends Record<string, unknown>,
   K extends string = DeepKeys<Conf>,
   T = GetDictValue<K, Conf>
->(
-  path: string,
-  defaultValue: T = undefined
-): T | undefined {
+>(path: string, defaultValue: T = undefined): T | undefined {
   const conf = getConfig<Conf>();
   if (!conf) {
     return defaultValue;
