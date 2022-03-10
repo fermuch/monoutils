@@ -18,9 +18,9 @@ export function currentLogin(): string {
 
 export function emit(ev: BaseEvent) {
   try {
-    return messages.emit('onEvent', ev);
+    return messages.emit("onEvent", ev);
   } catch (e) {
-    platform.log('Error sending message');
+    platform.log("Error sending message");
     platform.log(String(e));
     return false;
   }
