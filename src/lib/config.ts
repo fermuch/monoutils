@@ -11,9 +11,9 @@ export function getConfig<T extends Record<string, unknown>>(): Partial<T> {
   return conf;
 }
 
-export function get<Conf extends Config, T>(
+export function get<Conf extends Config, T = null>(
   path: string[],
-  defaultValue: T
+  defaultValue: T = null,
 ): T {
   const conf = getConfig<Conf>();
   if (!conf) {
