@@ -48,6 +48,9 @@ beforeEach(() => {
     originalOn(event, listener);
   }
   (global as any).messages = eventEmitter;
+  global.emitEventGlobally = (event: any) => {
+    eventEmitter.emit(event.type, event);
+  }
 
   // const uuid: v4;
   // const when: FNArgs;

@@ -16,6 +16,7 @@ describe("tools", () => {
   });
 
   it("calls messages.emit", () => {
+    global.emitEventGlobally = jest.fn();
     global.messages.emit = jest.fn();
 
     class TestEvent {
@@ -26,9 +27,9 @@ describe("tools", () => {
     }
     const ev = new TestEvent();
 
-    MonoUtils.emit(ev)
-    expect(global.messages.emit).toHaveBeenCalled();
-    expect(global.messages.emit).toHaveBeenCalledWith('onEvent', ev);
+    MonoUtils.emit(ev);
+    expect(global.emitEventGlobally).toHaveBeenCalled();
+    expect(global.emitEventGlobally).toHaveBeenCalledWith(ev);
   })
 })
 
