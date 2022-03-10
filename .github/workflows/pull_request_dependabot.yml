@@ -18,17 +18,17 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node_version }}
-      - name: npm install, build, and test
+      - name: yarn install, build, and test
         run: |
-          npm install
-          npm run test
+          yarn install
+          yarn test
         env:
           CI: true
       - name: Merge PR
         if: success()
         uses: "actions/github-script@v2"
         with:
-          github-token: "${{ secrets.GH_KEY }}"
+          # github-token: "${{ secrets.GH_KEY }}"
           script: |
             const pullRequest = context.payload.pull_request
             const repository = context.repo
@@ -39,10 +39,10 @@ jobs:
               pull_number: pullRequest.number,
               repo: repository.repo,
             })
-      - name: Reject PR
-        if: failure()
-        uses: peter-evans/close-pull@v1
-        with:
-          pull-request-number: ${{github.event.number}}
-          comment: "Closing PR due to failing tests."
-          delete-branch: true
+      # - name: Reject PR
+      #   if: failure()
+      #   uses: peter-evans/close-pull@v1
+      #   with:
+      #     pull-request-number: ${{github.event.number}}
+      #     comment: "Closing PR due to failing tests."
+      #     delete-branch: true
