@@ -1,14 +1,5 @@
 import { default as lGet } from "lodash/get";
 
-export function getConfig<T>(): Partial<T> {
-  const conf = getSettings?.() as Partial<T>;
-  if (!conf) {
-    return {} as Partial<T>;
-  }
-
-  return conf;
-}
-
 type Concat<K extends string, P extends string> = `${K}${"" extends P
   ? ""
   : "."}${P}`;
@@ -27,20 +18,35 @@ type DeepKeys<T> = T extends Record<string, unknown>
     }[keyof T]
   : "";
 
-type StringKeys<T> = T extends Record<string, unknown>
-  ? {
-      [K in keyof T]: StringKeys<T[K]>;
-    }
-  : string;
+// type StringKeys<T> = T extends Record<string, unknown>
+//   ? {
+//       [K in keyof T]: StringKeys<T[K]>;
+//     }
+//   : string;
 
-export function get<Conf, K extends DeepKeys<Conf>>(
-  path: K,
-  defaultValue: GetDictValue<K, Conf> | undefined = undefined
-): GetDictValue<K, Conf> | undefined {
-  const conf = getConfig<Conf>();
-  if (!conf) {
-    return defaultValue;
+/**
+ * Config manager for the script.
+ */
+// eslint-disable-next-line @typescript-eslint/ban-types
+export class Config<Conf extends object> {
+  public readonly store: Partial<Conf>;
+  
+  constructor() {
+    if (typeof getSettings === "function") {
+      this.store = getSettings?.() as Partial<Conf> || {};
+    } else {
+      this.store = {};
+    }
   }
 
-  return lGet(conf, path, defaultValue) as GetDictValue<K, Conf> | undefined;
+  get<K extends DeepKeys<Conf>>(
+    path: K,
+    defaultValue: GetDictValue<K, Conf> | undefined = undefined,
+  ): GetDictValue<K, Conf> | undefined {
+    if (!this.store) {
+      return defaultValue;
+    }
+
+    return lGet(this.store, path, defaultValue) as GetDictValue<K, Conf> | undefined;
+  }
 }

@@ -105,17 +105,20 @@ xdescribe("collections", () => {
 
 describe("config", () => {
   it("returns config", () => {
-    const settings = MonoUtils.config.getConfig();
+    const config = new MonoUtils.config.Config();
+    const settings = config.store;
     expect(settings).toBeTruthy();
   })
 
   it("returns config.get(path, defaultValue)", () => {
-    const val = MonoUtils.config.get("isTest", false);
+    const config = new MonoUtils.config.Config();
+    const val = config.get("isTest", false);
     expect(val).toBe(true);
   })
 
   it("returns config.set(path, value) for deep path", () => {
-    const val = MonoUtils.config.get(["foo", "bar", "zaz"], "test");
+    const config = new MonoUtils.config.Config();
+    const val = config.get(["foo", "bar", "zaz"], "test");
     expect(val).toBe("zaz");
   })
 })
