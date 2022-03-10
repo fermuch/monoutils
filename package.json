@@ -1,7 +1,7 @@
 {
-  "name": "@hodgef/ts-library-boilerplate-basic",
-  "version": "1.1.77",
-  "description": "Typescript Minimal Starter Kit for building libraries",
+  "name": "@fermuch/monoutils",
+  "version": "0.0.1",
+  "description": "Utilities for Monoflow",
   "main": "build/index.js",
   "types": "build/types/index.d.ts",
   "scripts": {
@@ -15,18 +15,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hodgef/ts-library-boilerplate-basic"
+    "url": "https://github.com/fermuch/monoutils.git"
   },
-  "author": "Francisco Hodge <hello@franciscohodge.com> (https://github.com/hodgef)",
+  "author": "Fernando Mumbach <fermuch@ayvu.net> (https://github.com/fermuch)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hodgef/ts-library-boilerplate-basic/issues"
+    "url": "https://github.com/fermuch/monoutils/issues"
   },
-  "homepage": "https://github.com/hodgef/ts-library-boilerplate-basic",
+  "homepage": "https://github.com/fermuch/monoutils",
   "keywords": [
     "library",
-    "starter",
-    "es6"
+    "monoflow"
   ],
   "devDependencies": {
     "@babel/cli": "^7.17.6",
