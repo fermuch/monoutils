@@ -13,19 +13,25 @@ export abstract class BaseEvent {
 
   constructor() {
     this.createdAt = Date.now() / 1000; // in seconds
-    this.deviceId = myID() || '';
-    this.loginId = currentLogin() || '';
+    this.deviceId = myID() || "";
+    this.loginId = currentLogin() || "";
   }
 
   // what kind of data is this event?
   // used mainly to filter between different events.
   abstract kind: string;
-  
+
   // getData() returns a copy of this event data
   abstract getData(): unknown;
 
   // returns a JSON-serializable object of the event.
-  toJSON(): {kind: string, createdAt: number, data: unknown, deviceId: string, loginId: string} {
+  toJSON(): {
+    kind: string;
+    createdAt: number;
+    data: unknown;
+    deviceId: string;
+    loginId: string;
+  } {
     return {
       kind: this.kind,
       createdAt: this.createdAt,
@@ -45,12 +51,12 @@ export abstract class BaseEvent {
  * @returns BaseEvent
  */
 export function generateEvent(kind: string, data: unknown = {}): BaseEvent {
-  return new class extends BaseEvent {
+  return new (class extends BaseEvent {
     kind = kind;
     getData() {
       return data;
     }
-  }();
+  })();
 }
 
 /**
@@ -59,8 +65,8 @@ export function generateEvent(kind: string, data: unknown = {}): BaseEvent {
  * @returns BaseEvent
  */
 export function regenerateEvent(ev: any): BaseEvent {
-  return new class extends BaseEvent {
-    kind = ev?.kind || 'unknown-event';
+  return new (class extends BaseEvent {
+    kind = ev?.kind || "unknown-event";
     constructor() {
       super();
       this.createdAt = ev?.createdAt || Date.now() / 1000; // in seconds
@@ -68,11 +74,14 @@ export function regenerateEvent(ev: any): BaseEvent {
     getData() {
       return ev?.getData?.() || {};
     }
-  }();
+  })();
 }
 
-export function subscribe<E extends BaseEvent = BaseEvent>(kind: E['kind'], handler: (ev: E) => void) {
-  messages.on('onEvent', (ev: any) => {
+export function subscribe<E extends BaseEvent = BaseEvent>(
+  kind: E["kind"],
+  handler: (ev: E) => void
+) {
+  messages.on("onEvent", (ev: any) => {
     if (ev.kind === kind) {
       handler(regenerateEvent(ev) as E);
     }

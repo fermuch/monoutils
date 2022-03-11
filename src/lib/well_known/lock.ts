@@ -2,8 +2,8 @@ import { emit } from "../tools";
 import { BaseEvent } from "./event";
 
 export class LockEvent extends BaseEvent {
-  kind = 'lock-request';
-  
+  kind = "lock-request";
+
   constructor(public readonly lock: boolean) {
     super();
   }
