@@ -1,4 +1,19 @@
-import { default as lGet } from "lodash/get";
+// import { default as lGet } from "lodash/get";
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+function lGet<TObject extends object, TKey extends keyof TObject, TDefault>(
+  obj: TObject,
+  path: TKey | TKey[],
+  defaultValue: TDefault = undefined
+): Exclude<TObject[TKey], undefined> | TDefault {
+  const travel = regexp =>
+    String.prototype.split
+      .call(path, regexp)
+      .filter(Boolean)
+      .reduce((res, key) => (res !== null && res !== undefined ? res[key] : res), obj);
+  const result = travel(/[,[\]]+?/) || travel(/[,[\].]+?/);
+  return result === undefined || result === obj ? defaultValue : result;
+}
 
 type Concat<K extends string, P extends string> = `${K}${"" extends P
   ? ""
@@ -47,7 +62,7 @@ export class Config<Conf extends object> {
       return defaultValue;
     }
 
-    return lGet(this.store, path, defaultValue) as
+    return lGet(this.store, path as never, defaultValue) as
       | GetDictValue<K, Conf>
       | undefined;
   }

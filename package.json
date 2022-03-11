@@ -44,6 +44,8 @@
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.3",
     "babel-preset-minify": "^0.5.0",
+    "brotli-webpack-plugin": "^1.1.0",
+    "compression-webpack-plugin": "^9.2.0",
     "css-loader": "^6.7.1",
     "eslint": "^7.32.0",
     "file-loader": "^6.2.0",
@@ -84,7 +86,6 @@
   },
   "dependencies": {
     "@fermuch/telematree": "^9.16.0",
-    "lodash": "^4.17.21",
     "typed-emitter": "^2.1.0"
   }
 }
