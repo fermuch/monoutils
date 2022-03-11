@@ -1,6 +1,6 @@
 {
   "name": "@fermuch/monoutils",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "description": "Utilities for Monoflow",
   "main": "build/index.js",
   "types": "build/types/src/lib/index.d.ts",
