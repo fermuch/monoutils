@@ -4,7 +4,7 @@ import { BaseEvent } from "./event";
 /**
  * Used in `env.data` to write/read current lock state.
  */
-export const LOCK_STATE_KEY = 'LOCK_STATE' as const;
+export const LOCK_STATE_KEY = "LOCK_STATE" as const;
 
 /**
  * Event sent when using lock()/unlock()
