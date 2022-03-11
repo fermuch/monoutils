@@ -6,11 +6,14 @@ function lGet<TObject extends object, TKey extends keyof TObject, TDefault>(
   path: TKey | TKey[],
   defaultValue: TDefault = undefined
 ): Exclude<TObject[TKey], undefined> | TDefault {
-  const travel = regexp =>
+  const travel = (regexp) =>
     String.prototype.split
       .call(path, regexp)
       .filter(Boolean)
-      .reduce((res, key) => (res !== null && res !== undefined ? res[key] : res), obj);
+      .reduce(
+        (res, key) => (res !== null && res !== undefined ? res[key] : res),
+        obj
+      );
   const result = travel(/[,[\]]+?/) || travel(/[,[\].]+?/);
   return result === undefined || result === obj ? defaultValue : result;
 }

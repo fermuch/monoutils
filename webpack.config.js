@@ -1,19 +1,7 @@
 const path = require('path');
-const fs = require('fs');
-const CompressionPlugin = require("compression-webpack-plugin");
-const BrotliPlugin = require('brotli-webpack-plugin');
-
-const entryFile = path.resolve(__dirname, 'src/lib/index.ts');
-const distDir = path.resolve(__dirname, 'build');
-
-if (!fs.existsSync(entryFile)) {
-  console.error('entry file not found: ', entryFile);
-  process.exit(1);
-}
-
-if (!fs.existsSync(distDir)) {
-  fs.mkdirSync(distDir);
-}
+// const webpack = require('webpack');
+const PrettierPlugin = require("prettier-webpack-plugin");
+const TerserPlugin = require('terser-webpack-plugin');
 
 var babelOptions = {
   presets: [
@@ -33,70 +21,49 @@ var babelOptions = {
 };
 
 module.exports = {
-  entry: entryFile,
-  mode: 'production',
+  mode: "production",
+  devtool: 'source-map',
+  entry: './src/lib/index.ts',
   target: 'es5',
-  // devtool: 'inline-source-map',
+  output: {
+    filename: 'index.js',
+    path: path.resolve(__dirname, 'build'),
+    globalObject: `typeof self !== 'undefined' ? self : this`,
+    library: "MonoUtils",
+    libraryTarget: 'umd',
+    chunkFormat: 'commonjs',
+    clean: true
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({ extractComments: false }),
+    ],
+  },
   module: {
     rules: [
       {
-        test: /\.(t|j)s?$/,
+        test: /\.(m|j|t)s$/,
+        exclude: /(node_modules|bower_components)/,
         use: [
           {
             loader: 'babel-loader',
             options: babelOptions
-          },
-          {
+          }, {
             loader: 'ts-loader',
             options: {
               allowTsInNodeModules: true
             },
           }
-        ]
-        // exclude: /node_modules/,
+        ],
       },
-    ],
-  },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
-    fallback: { "stream": false, "http": false, "url": false, "https": false, "zlib": false }
-  },
-  output: {
-    filename: 'index.js',
-    path: distDir,
-    chunkFormat: 'commonjs',
-    globalObject: 'this',
-    environment: {
-      // The environment supports arrow functions ('() => { ... }').
-      arrowFunction: false,
-      // The environment supports BigInt as literal (123n).
-      bigIntLiteral: false,
-      // The environment supports const and let for variable declarations.
-      const: false,
-      // The environment supports destructuring ('{ a, b } = obj').
-      destructuring: false,
-      // The environment supports an async import() function to import EcmaScript modules.
-      dynamicImport: false,
-      // The environment supports 'for of' iteration ('for (const x of array) { ... }').
-      forOf: false,
-      // The environment supports ECMAScript Module syntax to import ECMAScript modules (import ... from '...').
-      module: false,
-      // The environment supports optional chaining ('obj?.a' or 'obj?.()').
-      optionalChaining: false,
-      // The environment supports template literals.
-      templateLiteral: false,
-    },
-  },
-  optimization: {
-    usedExports: true,
+    ]
   },
   plugins: [
-    new CompressionPlugin(),
-    new BrotliPlugin({
-      // asset: '[path].br',
-      // test: /\.(js|css|html|svg)$/,
-      // threshold: 10240,
-      // minRatio: 0.8
-    })
-  ]
+    new PrettierPlugin(),
+  ],
+  resolve: {
+    extensions: ['.ts', '.js', '.json'],
+    fallback: { "stream": false, "http": false, "url": false, "https": false, "zlib": false }
+  }
 };
