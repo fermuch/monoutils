@@ -3,13 +3,13 @@
   "version": "0.0.27",
   "description": "Utilities for Monoflow",
   "main": "build/index.js",
-  "types": "build/types/src/lib/index.d.ts",
+  "types": "build/types/index.d.ts",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "start": "webpack serve --config webpack.config.demo.js",
-    "build": "webpack",
+    "build": "webpack && tsc",
     "build:demo": "webpack --config webpack.config.demo.js",
     "test": "jest --silent",
     "coverage": "npm run test -- --coverage",
