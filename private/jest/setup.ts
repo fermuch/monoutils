@@ -39,7 +39,14 @@ beforeEach(() => {
   };
 
   // const env: DynamicData['env'];
-  (global as any).env = {}; // TODO!
+  (global as any).env = {
+    setData(key: string, val: string | number | boolean) {
+      (global as any).data[key] = val;
+    },
+    data: (global as any).data,
+
+    // TODO: add the other functions
+  };
 
   // messages mock
   const eventEmitter = new EventEmitter() as TypedEmitter<EventArgs>

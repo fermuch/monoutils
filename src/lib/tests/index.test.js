@@ -136,6 +136,18 @@ describe("well known", () => {
     expect(global.emitEventGlobally).toHaveBeenCalled();
   });
 
+  it("replaces LOCK_STATE_KEY when locked/unlocked", () => {
+    MonoUtils.wk.lock.unlock();
+    // eslint-disable-next-line no-undef
+    expect(env.data[MonoUtils.wk.lock.LOCK_STATE_KEY]).toBe(false);
+    expect(MonoUtils.wk.lock.getLockState()).toBe(false);
+
+    MonoUtils.wk.lock.lock();
+    // eslint-disable-next-line no-undef
+    expect(env.data[MonoUtils.wk.lock.LOCK_STATE_KEY]).toBe(true);
+    expect(MonoUtils.wk.lock.getLockState()).toBe(true);
+  })
+
   it("generates a BaseEvent when using generateEvent()", () => {
     const event = MonoUtils.wk.event.generateEvent();
     expect(event).toBeInstanceOf(BaseEvent);
