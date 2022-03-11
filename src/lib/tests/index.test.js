@@ -1,4 +1,5 @@
 import * as MonoUtils from '../index';
+import { BaseEvent } from '../well_known/event';
 
 describe("tools", () => {
   it('returns an string for myID()', () => {
@@ -17,7 +18,6 @@ describe("tools", () => {
 
   it("calls messages.emit", () => {
     global.emitEventGlobally = jest.fn();
-    global.messages.emit = jest.fn();
 
     class TestEvent {
       kind = 'test-event';
@@ -122,3 +122,41 @@ describe("config", () => {
     expect(val).toBe("zaz");
   })
 })
+
+describe("well known", () => {
+  it("emits an event on lock()", () => {
+    global.emitEventGlobally = jest.fn();
+    MonoUtils.wk.lock.lock();
+    expect(global.emitEventGlobally).toHaveBeenCalled();
+  });
+
+  it("emits an event on unlock()", () => {
+    global.emitEventGlobally = jest.fn();
+    MonoUtils.wk.lock.unlock();
+    expect(global.emitEventGlobally).toHaveBeenCalled();
+  });
+
+  it("generates a BaseEvent when using generateEvent()", () => {
+    const event = MonoUtils.wk.event.generateEvent();
+    expect(event).toBeInstanceOf(BaseEvent);
+  });
+
+  it("transforms any payload into a BaseEvent with regenerateEvent()", () => {
+    const payload = {
+      kind: "test-event",
+      getData() {
+        return {
+          foo: "bar"
+        }
+      },
+      createdAt: 42,
+    };
+    const event = MonoUtils.wk.event.regenerateEvent(payload);
+    expect(event).toBeInstanceOf(BaseEvent);
+    expect(event.kind).toBe("test-event");
+    expect(event.getData()).toEqual({
+      foo: "bar"
+    });
+    expect(event.createdAt).toBe(42);
+  });
+});
