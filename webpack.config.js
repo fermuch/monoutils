@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const PrettierPlugin = require("prettier-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 const getPackageJson = require('./scripts/getPackageJson');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 const {
   version,
@@ -29,15 +31,42 @@ module.exports = {
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'build'),
-    globalObject: 'this',
+    globalObject: `typeof self !== 'undefined' ? self : this`,
     library: "MonoUtils",
     libraryTarget: 'umd',
-    clean: true
+    clean: true,
+    environment: {
+      // The environment supports arrow functions ('() => { ... }').
+      arrowFunction: false,
+      // The environment supports BigInt as literal (123n).
+      bigIntLiteral: false,
+      // The environment supports const and let for variable declarations.
+      const: false,
+      // The environment supports destructuring ('{ a, b } = obj').
+      destructuring: false,
+      // The environment supports an async import() function to import EcmaScript modules.
+      dynamicImport: false,
+      // The environment supports 'for of' iteration ('for (const x of array) { ... }').
+      forOf: false,
+      // The environment supports ECMAScript Module syntax to import ECMAScript modules (import ... from '...').
+      module: false,
+      // The environment supports optional chaining ('obj?.a' or 'obj?.()').
+      optionalChaining: false,
+      // The environment supports template literals.
+      templateLiteral: false,
+    },
   },
   optimization: {
     minimize: true,
     minimizer: [
       new TerserPlugin({ extractComments: false }),
+      new OptimizeCSSAssetsPlugin({
+        cssProcessorOptions: {
+          map: {
+            inline: false
+          }
+        }
+      })
     ],
   },
   module: {
@@ -49,10 +78,20 @@ module.exports = {
           loader: 'babel-loader'
         }
       },
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          { loader: "css-loader", options: { sourceMap: true } },
+        ],
+      }
     ]
   },
   plugins: [
     new PrettierPlugin(),
+    new MiniCssExtractPlugin({
+        filename: 'css/index.css'
+    }),
     new webpack.BannerPlugin(banner)
   ],
   resolve: {
