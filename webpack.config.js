@@ -29,7 +29,7 @@ module.exports = {
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'build'),
-    globalObject: `typeof self !== 'undefined' ? self : this`,
+    globalObject: 'this',
     library: "MonoUtils",
     libraryTarget: 'umd',
     clean: true
