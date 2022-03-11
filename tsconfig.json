@@ -10,7 +10,7 @@
     "allowJs": true,
     "resolveJsonModule": true,
     "declaration": true,
-    "emitDeclarationOnly": true,
+    // "emitDeclarationOnly": true,
     "esModuleInterop": true,
     "lib": [
       "es2016",
