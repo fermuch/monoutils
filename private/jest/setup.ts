@@ -41,16 +41,13 @@ beforeEach(() => {
   // const env: DynamicData['env'];
   (global as any).env = {}; // TODO!
 
-  // const messages: TypedEmitter<EventArgs>;
+  // messages mock
   const eventEmitter = new EventEmitter() as TypedEmitter<EventArgs>
-  const originalOn = eventEmitter.on;
-  (eventEmitter as any).on = (event: any, listener: any) => {
-    originalOn(event, listener);
+  (eventEmitter as any).on = eventEmitter.on;
+  (global as any).emitEventGlobally = (event: any) => {
+    eventEmitter.emit('onEvent', event);
   }
   (global as any).messages = eventEmitter;
-  global.emitEventGlobally = (event: any) => {
-    eventEmitter.emit(event.type, event);
-  }
 
   // const uuid: v4;
   // const when: FNArgs;

@@ -44,7 +44,7 @@ export abstract class BaseEvent {
  * @param data Any payload, as long as it does not contain any undefined. Nulls are fine.
  * @returns BaseEvent
  */
-export function generateEvent(kind: string, data: unknown): BaseEvent {
+export function generateEvent(kind: string, data: unknown = {}): BaseEvent {
   return new class extends BaseEvent {
     kind = kind;
     getData() {
@@ -69,4 +69,12 @@ export function regenerateEvent(ev: any): BaseEvent {
       return ev?.getData?.() || {};
     }
   }();
+}
+
+export function subscribe<E extends BaseEvent = BaseEvent>(kind: E['kind'], handler: (ev: E) => void) {
+  messages.on('onEvent', (ev: any) => {
+    if (ev.kind === kind) {
+      handler(regenerateEvent(ev) as E);
+    }
+  });
 }

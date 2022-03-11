@@ -159,4 +159,16 @@ describe("well known", () => {
     });
     expect(event.createdAt).toBe(42);
   });
+
+  it("subscribes to an specific event when using subscribe()", () => {
+    const spy = jest.fn();
+    MonoUtils.wk.event.subscribe("test-event", spy);
+
+    const ev = MonoUtils.wk.event.generateEvent('test-event', {});
+    const ret = MonoUtils.emit(ev);
+    expect(ret).toBe(true);
+
+    expect(spy).toHaveBeenCalled();
+    expect(spy).toHaveBeenCalledWith(ev);
+  });
 });
