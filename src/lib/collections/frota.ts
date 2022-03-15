@@ -33,9 +33,9 @@ export function getFrotaDoc(): CollectionDoc<FrotaCollection> | null {
   const doc = col.get(myID());
 
   if (!initialized) {
-    doc.set('id', myID());
-    doc.set('appVer', Number(data.APP_BUILD_VERSION || '0'));
-    doc.set('pulsusId', String(data.PULSUS_ID || ''));
+    doc.set("id", myID());
+    doc.set("appVer", Number(data.APP_BUILD_VERSION || "0"));
+    doc.set("pulsusId", String(data.PULSUS_ID || ""));
     initialized = true;
   }
 

@@ -21,7 +21,7 @@ export function getBleDoc(): CollectionDoc<BleCollection> | null {
   if (!col) return null;
 
   if (!initialized) {
-    col.set(myID(), 'id', myID());
+    col.set(myID(), "id", myID());
     initialized = true;
   }
 
