@@ -17,8 +17,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: npm install
-      - run: npm run test
+      - run: yarn install
+      - run: yarn test
 
       - name: Setup GIT
         run: |
@@ -33,8 +33,8 @@ jobs:
       - name: Bump version
         run: |
           git reset --hard
-          npm version patch
-          npm run build
+          yarn version --patch
+          yarn run build
           git add . || true
           git commit -m "Build update" || true
           git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
