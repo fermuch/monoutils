@@ -41,23 +41,21 @@ export function getFrotaDoc(): CollectionDoc<FrotaCollection> | null {
  * @param val value for the key or undefined
  * @returns void
  */
-export function maybeUpdateFrota<
- K extends keyof FrotaCollection
->(
- key: K,
- val: FrotaCollection[K] | undefined
+export function maybeUpdateFrota<K extends keyof FrotaCollection>(
+  key: K,
+  val: FrotaCollection[K] | undefined
 ) {
- if (typeof val === 'undefined') {
-   return;
- }
+  if (typeof val === "undefined") {
+    return;
+  }
 
- if (typeof key === 'number') {
-   return;
- }
+  if (typeof key === "number") {
+    return;
+  }
 
- const frota = getFrotaDoc();
- const currentVal = (frota.data as typeof frota.data)?.[key];
- if (currentVal !== val) {
-   frota.set(key, val);
- }
+  const frota = getFrotaDoc();
+  const currentVal = (frota.data as typeof frota.data)?.[key];
+  if (currentVal !== val) {
+    frota.set(key, val);
+  }
 }
