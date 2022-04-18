@@ -18,8 +18,6 @@ export interface FrotaCollection {
   [key: string]: StoreBasicValueT;
 }
 
-let initialized = false;
-
 /**
  * Get the Frota doc for this specific device.
  * Also sets the doc as watched, so that it will be updated on changes.
@@ -30,14 +28,8 @@ export function getFrotaDoc(): CollectionDoc<FrotaCollection> | null {
     env.project?.collectionsManager?.ensureExists?.<FrotaCollection>("frota");
   if (!col) return null;
 
+  col.watch(myID());
   const doc = col.get(myID());
-
-  if (!initialized) {
-    doc.set("id", myID());
-    doc.set("appVer", Number(data.APP_VERSION || "0"));
-    doc.set("pulsusId", String(data.PULSUS_ID || ""));
-    initialized = true;
-  }
 
   return doc;
 }
