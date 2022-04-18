@@ -12,7 +12,9 @@ export interface HourmeterCollection {
  */
 export function getHourmeterDoc(): CollectionDoc<HourmeterCollection> | null {
   const col =
-    env.project?.collectionsManager?.ensureExists?.<HourmeterCollection>("hourmeters");
+    env.project?.collectionsManager?.ensureExists?.<HourmeterCollection>(
+      "hourmeters"
+    );
   if (!col) return null;
 
   col.watch(myID());
