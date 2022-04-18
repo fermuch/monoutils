@@ -33,3 +33,31 @@ export function getFrotaDoc(): CollectionDoc<FrotaCollection> | null {
 
   return doc;
 }
+
+/**
+ * Util to update a value if it has changed.
+ *
+ * @param key key of frota collection
+ * @param val value for the key or undefined
+ * @returns void
+ */
+export function maybeUpdateFrota<
+ K extends keyof FrotaCollection
+>(
+ key: K,
+ val: FrotaCollection[K] | undefined
+) {
+ if (typeof val === 'undefined') {
+   return;
+ }
+
+ if (typeof key === 'number') {
+   return;
+ }
+
+ const frota = getFrotaDoc();
+ const currentVal = (frota.data as typeof frota.data)?.[key];
+ if (currentVal !== val) {
+   frota.set(key, val);
+ }
+}
