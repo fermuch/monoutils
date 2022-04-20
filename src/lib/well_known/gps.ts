@@ -10,7 +10,7 @@ interface CurrentGpsData {
 }
 
 export function getCurrent(): CurrentGpsData | null {
-  if (typeof env === 'undefined' || typeof env.data === 'undefined') {
+  if (typeof env === "undefined" || typeof env.data === "undefined") {
     return null;
   }
 
