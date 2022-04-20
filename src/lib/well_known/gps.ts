@@ -1,4 +1,4 @@
-interface CurrentGpsData {
+export interface CurrentGpsData {
   date: number;
   latitude: number;
   longitude: number;

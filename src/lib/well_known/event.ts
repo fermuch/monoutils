@@ -1,4 +1,5 @@
 import { currentLogin, myID } from "../tools";
+import { CurrentGpsData, getCurrent } from "./gps";
 
 /**
  * BaseEvent for all events,
@@ -10,11 +11,13 @@ export abstract class BaseEvent {
   createdAt: number;
   deviceId: string;
   loginId: string;
+  gps: CurrentGpsData | null;
 
   constructor() {
     this.createdAt = Date.now() / 1000; // in seconds
     this.deviceId = myID() || "";
     this.loginId = currentLogin() || "";
+    this.gps = getCurrent() || null;
   }
 
   // what kind of data is this event?
@@ -30,6 +33,7 @@ export abstract class BaseEvent {
     createdAt: number;
     data: unknown;
     deviceId: string;
+    gps: CurrentGpsData | null;
     loginId: string;
   } {
     return {
@@ -37,6 +41,7 @@ export abstract class BaseEvent {
       createdAt: this.createdAt,
       deviceId: this.deviceId,
       loginId: this.loginId,
+      gps: this.gps,
       data: this.getData(),
     };
   }
