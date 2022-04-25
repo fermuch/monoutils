@@ -974,16 +974,16 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@fermuch/telematree@^9.20.0":
-  version "9.20.0"
-  resolved "https://registry.yarnpkg.com/@fermuch/telematree/-/telematree-9.20.0.tgz#ab93c3ab284bd1eed0846d963a6a24199f7f9e08"
-  integrity sha512-Dm8gE5EXkb1vd8ZpXwjjfx0lijEu0laGzOoiP1xB1qbdLMA7I++q+QtHmsmPvCt0aZ6jPHqVfOKSA7qb3Lf+AA==
+"@fermuch/telematree@^9.21.0":
+  version "9.21.0"
+  resolved "https://registry.yarnpkg.com/@fermuch/telematree/-/telematree-9.21.0.tgz#5b27da653e48001a39138d15d47348c1ab69a13e"
+  integrity sha512-tTehwavHfqvc8d8XemAVeDsaJypz/ljG3sN5Tvp4bweKE0wPOU/rR543RiFVtsx194do0c0ywFTnYj9awCGyEQ==
   dependencies:
     "@stablelib/snappy" "^1.0.1"
     eta "^1.12.3"
     eval5 "^1.4.7"
     fflate "^0.7.3"
-    formiojs "^4.14.2"
+    formiojs "^4.14.6"
     imurmurhash "^0.1.4"
     lodash "^4.17.21"
     pure-uuid "^1.6.2"
@@ -3712,7 +3712,7 @@ form-data@^3.0.0:
     combined-stream "^1.0.8"
     mime-types "^2.1.12"
 
-formiojs@^4.14.2:
+formiojs@^4.14.6:
   version "4.14.6"
   resolved "https://registry.yarnpkg.com/formiojs/-/formiojs-4.14.6.tgz#702f29cc8f08afc9ae0fe308e52a99acf0b46c62"
   integrity sha512-k7ouqAz2WPkPjqNIF2Z5190RzIz4Yp31Hh0NImMgtsF4fbFAE+ZZ6Wi2+0TCvMRUnDbttarN02VSaRvZh0YIng==
