@@ -47,9 +47,13 @@ type DeepKeys<T> = T extends Record<string, unknown>
  */
 // eslint-disable-next-line @typescript-eslint/ban-types
 export class Config<Conf extends object> {
-  public readonly store: Partial<Conf>;
+  public store: Partial<Conf>;
 
   constructor() {
+    this.reload.call(this);
+  }
+
+  reload() {
     if (typeof getSettings === "function") {
       this.store = (getSettings?.() as Partial<Conf>) || {};
     } else {
