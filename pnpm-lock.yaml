@@ -3,7 +3,7 @@ lockfileVersion: '6.0'
 dependencies:
   '@fermuch/telematree':
     specifier: ^9.23.0
-    version: 9.23.0(cross-fetch@3.1.6)(mobx-keystone@0.67.2)(mobx@6.9.0)
+    version: 9.23.0(cross-fetch@3.1.6)(mobx-keystone@1.6.0)(mobx@6.9.0)
   typed-emitter:
     specifier: ^2.1.0
     version: 2.1.0
@@ -73,8 +73,8 @@ devDependencies:
     specifier: ^2.7.6
     version: 2.7.6(webpack@5.86.0)
   mobx-keystone:
-    specifier: ^0.67.0
-    version: 0.67.2(mobx@6.9.0)
+    specifier: ^1.6.0
+    version: 1.6.0(mobx@6.9.0)
   optimize-css-assets-webpack-plugin:
     specifier: ^6.0.1
     version: 6.0.1(webpack@5.86.0)
@@ -1629,7 +1629,7 @@ packages:
       - supports-color
     dev: true
 
-  /@fermuch/telematree@9.23.0(cross-fetch@3.1.6)(mobx-keystone@0.67.2)(mobx@6.9.0):
+  /@fermuch/telematree@9.23.0(cross-fetch@3.1.6)(mobx-keystone@1.6.0)(mobx@6.9.0):
     resolution: {integrity: sha512-lsKuzVtnsutsgUvCG/LHTnq29MFvT5nkKDYZ1Tr50Q5SmxTZN4NrsvIzoiGbOovPg6u64xGsdqsmRFFPOZNdMA==}
     peerDependencies:
       cross-fetch: ^3.1.5
@@ -1645,7 +1645,7 @@ packages:
       imurmurhash: 0.1.4
       lodash: 4.17.21
       mobx: 6.9.0
-      mobx-keystone: 0.67.2(mobx@6.9.0)
+      mobx-keystone: 1.6.0(mobx@6.9.0)
       pure-uuid: 1.6.2
       typed-emitter: 2.1.0
     transitivePeerDependencies:
@@ -3175,7 +3175,7 @@ packages:
     resolution: {integrity: sha512-gxGWBrTT1JuMx6R+o5PTXMmUnhnVzLQ9SNutD4YqKtI6ap897t3tKECYla6gCWEkplXnlNybEkZg9GEGxKFCgw==}
     dependencies:
       pascal-case: 3.1.2
-      tslib: 2.3.1
+      tslib: 2.5.3
     dev: true
 
   /camelcase@5.3.1:
@@ -3833,7 +3833,7 @@ packages:
     resolution: {integrity: sha512-Kv5nKlh6yRrdrGvxeJ2e5y2eRUpkUosIW4A2AS38zwSz27zu7ufDwQPi5Jhs3XAlGNetl3bmnGhQsMtkKJnj3w==}
     dependencies:
       no-case: 3.0.4
-      tslib: 2.3.1
+      tslib: 2.5.3
     dev: true
 
   /downloadjs@1.4.7:
@@ -5755,7 +5755,7 @@ packages:
   /lower-case@2.0.2:
     resolution: {integrity: sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==}
     dependencies:
-      tslib: 2.3.1
+      tslib: 2.5.3
     dev: true
 
   /lru-cache@5.1.1:
@@ -5893,16 +5893,15 @@ packages:
     dev: true
     optional: true
 
-  /mobx-keystone@0.67.2(mobx@6.9.0):
-    resolution: {integrity: sha512-E48CzNWOnIt1Vpr6q4AszfTRH15W36kgcSyXpnzkpwwfJ6pUcRW3kwgmFZBs+RUksDnMR7X7stI4sHx0Z8rJuA==}
+  /mobx-keystone@1.6.0(mobx@6.9.0):
+    resolution: {integrity: sha512-iRMMI3afkb33X2yeCeoiXfFUrpt7w7nqVp+Mr1yf90vctq5tI6c5Gi37wvTLF0NUDzkk4ti6rxLrCkPIoWgHpg==}
     peerDependencies:
       mobx: ^6.0.0 || ^5.0.0 || ^4.0.0
     dependencies:
       fast-deep-equal: 3.1.3
       mobx: 6.9.0
-      nanoid: 3.3.2
       ts-toolbelt: 9.6.0
-      tslib: 2.3.1
+      tslib: 2.5.3
 
   /mobx@6.9.0:
     resolution: {integrity: sha512-HdKewQEREEJgsWnErClfbFoVebze6rGazxFLU/XUyrII8dORfVszN1V0BMRnQSzcgsNNtkX8DHj3nC6cdWE9YQ==}
@@ -5946,6 +5945,7 @@ packages:
     resolution: {integrity: sha512-CuHBogktKwpm5g2sRgv83jEy2ijFzBwMoYA60orPDR7ynsLijJDqgsi4RDGj3OJpy3Ieb+LYwiRmIOGyytgITA==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
+    dev: true
 
   /nanoid@3.3.6:
     resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}
@@ -5979,7 +5979,7 @@ packages:
     resolution: {integrity: sha512-fgAN3jGAh+RoxUGZHTSOLJIqUc2wmoBwGR4tbpNAKmmovFoWq0OdRkb0VkldReO2a2iBT/OEulG9XSUc10r3zg==}
     dependencies:
       lower-case: 2.0.2
-      tslib: 2.3.1
+      tslib: 2.5.3
     dev: true
 
   /node-abi@2.30.1:
@@ -6206,7 +6206,7 @@ packages:
     resolution: {integrity: sha512-RXlj7zCYokReqWpOPH9oYivUzLYZ5vAPIfEmCTNViosC78F8F0H9y7T7gG2M39ymgutxF5gcFEsyZQSph9Bp3A==}
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.3.1
+      tslib: 2.5.3
     dev: true
 
   /parchment@2.0.0-dev.2:
@@ -6239,7 +6239,7 @@ packages:
     resolution: {integrity: sha512-uWlGT3YSnK9x3BQJaOdcZwrnV6hPpd8jFH1/ucpiLRPh/2zCVJKS19E4GvYHvaCcACn3foXZ0cLB9Wrx1KGe5g==}
     dependencies:
       no-case: 3.0.4
-      tslib: 2.3.1
+      tslib: 2.5.3
     dev: true
 
   /path-exists@4.0.0:
@@ -7651,6 +7651,11 @@ packages:
 
   /tslib@2.3.1:
     resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
+    dev: false
+    optional: true
+
+  /tslib@2.5.3:
+    resolution: {integrity: sha512-mSxlJJwl3BMEQCUNnxXBU9jP4JBktcEGhURcPR6VQVlnP0FdDEsIaz0C35dXNGLyRfrATNofF0F5p2KPxQgB+w==}
 
   /tsutils@3.21.0(typescript@4.9.5):
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
