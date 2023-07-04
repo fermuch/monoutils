@@ -36,7 +36,7 @@
     "@babel/plugin-proposal-class-properties": "^7.16.0",
     "@babel/plugin-transform-typescript": "^7.22.3",
     "@babel/polyfill": "^7.12.1",
-    "@babel/preset-env": "^7.22.4",
+    "@babel/preset-env": "^7.22.6",
     "@types/jest": "^29.5.2",
     "@types/lodash": "^4.14.195",
     "@typescript-eslint/eslint-plugin": "^4.32.0",
