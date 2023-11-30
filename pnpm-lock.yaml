@@ -23,8 +23,8 @@ devDependencies:
     specifier: ^7.16.0
     version: 7.16.7(@babel/core@7.23.3)
   '@babel/plugin-transform-typescript':
-    specifier: ^7.23.4
-    version: 7.23.4(@babel/core@7.23.3)
+    specifier: ^7.23.5
+    version: 7.23.5(@babel/core@7.23.3)
   '@babel/polyfill':
     specifier: ^7.12.1
     version: 7.12.1
@@ -271,6 +271,24 @@ packages:
       semver: 6.3.1
     dev: true
 
+  /@babel/helper-create-class-features-plugin@7.23.5(@babel/core@7.23.3):
+    resolution: {integrity: sha512-QELlRWxSpgdwdJzSJn4WAhKC+hvw/AtHbbrIoncKHkhKKR/luAlKkgBDcri1EzWAo8f8VvYVryEHN4tax/V67A==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0
+    dependencies:
+      '@babel/core': 7.23.3
+      '@babel/helper-annotate-as-pure': 7.22.5
+      '@babel/helper-environment-visitor': 7.22.20
+      '@babel/helper-function-name': 7.23.0
+      '@babel/helper-member-expression-to-functions': 7.23.0
+      '@babel/helper-optimise-call-expression': 7.22.5
+      '@babel/helper-replace-supers': 7.22.20(@babel/core@7.23.3)
+      '@babel/helper-skip-transparent-expression-wrappers': 7.22.5
+      '@babel/helper-split-export-declaration': 7.22.6
+      semver: 6.3.1
+    dev: true
+
   /@babel/helper-create-regexp-features-plugin@7.22.15(@babel/core@7.23.3):
     resolution: {integrity: sha512-29FkPLFjn4TPEa3RE7GpW+qbE8tlsu3jntNYNfcGsc49LphF1PQIiD+vMZ1z1xVOKt+93khA9tc2JBs3kBjA7w==}
     engines: {node: '>=6.9.0'}
@@ -332,6 +350,13 @@ packages:
 
   /@babel/helper-member-expression-to-functions@7.22.15:
     resolution: {integrity: sha512-qLNsZbgrNh0fDQBCPocSL8guki1hcPvltGDv/NxvUoABwFq7GkKSu1nRXeJkVZc+wJvne2E0RKQz+2SQrz6eAA==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      '@babel/types': 7.23.3
+    dev: true
+
+  /@babel/helper-member-expression-to-functions@7.23.0:
+    resolution: {integrity: sha512-6gfrPwh7OuT6gZyJZvd6WbTfrqAo7vm4xCzAXOusKqq/vWdKXphTpj5klHKNmRUU6/QRGlBsyU9mAIPaWHlqJA==}
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/types': 7.23.3
@@ -1228,15 +1253,15 @@ packages:
       '@babel/helper-plugin-utils': 7.22.5
     dev: true
 
-  /@babel/plugin-transform-typescript@7.23.4(@babel/core@7.23.3):
-    resolution: {integrity: sha512-39hCCOl+YUAyMOu6B9SmUTiHUU0t/CxJNUmY3qRdJujbqi+lrQcL11ysYUsAvFWPBdhihrv1z0oRG84Yr3dODQ==}
+  /@babel/plugin-transform-typescript@7.23.5(@babel/core@7.23.3):
+    resolution: {integrity: sha512-2fMkXEJkrmwgu2Bsv1Saxgj30IXZdJ+84lQcKKI7sm719oXs0BBw2ZENKdJdR1PjWndgLCEBNXJOri0fk7RYQA==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.23.3
       '@babel/helper-annotate-as-pure': 7.22.5
-      '@babel/helper-create-class-features-plugin': 7.22.15(@babel/core@7.23.3)
+      '@babel/helper-create-class-features-plugin': 7.23.5(@babel/core@7.23.3)
       '@babel/helper-plugin-utils': 7.22.5
       '@babel/plugin-syntax-typescript': 7.23.3(@babel/core@7.23.3)
     dev: true
