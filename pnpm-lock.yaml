@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@fermuch/telematree':
     specifier: ^14.0.0
-    version: 14.0.0(cross-fetch@3.1.6)(mobx-keystone@1.7.1)(mobx@6.9.0)
+    version: 14.0.0(cross-fetch@3.1.6)(mobx-keystone@1.8.0)(mobx@6.9.0)
   typed-emitter:
     specifier: ^2.1.0
     version: 2.1.0
@@ -77,8 +77,8 @@ devDependencies:
     specifier: ^2.7.6
     version: 2.7.6(webpack@5.89.0)
   mobx-keystone:
-    specifier: ^1.7.1
-    version: 1.7.1(mobx@6.9.0)
+    specifier: ^1.8.0
+    version: 1.8.0(mobx@6.9.0)
   optimize-css-assets-webpack-plugin:
     specifier: ^6.0.1
     version: 6.0.1(webpack@5.89.0)
@@ -1525,7 +1525,7 @@ packages:
       - supports-color
     dev: true
 
-  /@fermuch/telematree@14.0.0(cross-fetch@3.1.6)(mobx-keystone@1.7.1)(mobx@6.9.0):
+  /@fermuch/telematree@14.0.0(cross-fetch@3.1.6)(mobx-keystone@1.8.0)(mobx@6.9.0):
     resolution: {integrity: sha512-m+J5BGE9SLeOvuoKYXitr8DaFPCDIpL3GZWjn0ZpoxOiDdwOEnr7ynOYgTcZxWfqz7UEh8vpSdYfDoJcmBTjmg==}
     peerDependencies:
       cross-fetch: ^3.1.5
@@ -1539,7 +1539,7 @@ packages:
       formiojs: 4.14.13
       imurmurhash: 0.1.4
       mobx: 6.9.0
-      mobx-keystone: 1.7.1(mobx@6.9.0)
+      mobx-keystone: 1.8.0(mobx@6.9.0)
       pure-uuid: 1.6.3
       typed-emitter: 2.1.0
     transitivePeerDependencies:
@@ -5776,8 +5776,8 @@ packages:
     dev: true
     optional: true
 
-  /mobx-keystone@1.7.1(mobx@6.9.0):
-    resolution: {integrity: sha512-9MhQtBbzMJTwDg124JIpMdngj5HYTRtdPLJaSGQd9ixE7ckPj78cx1+dnDaO8PAyr2RFvOiMlV/seE0WhnemKw==}
+  /mobx-keystone@1.8.0(mobx@6.9.0):
+    resolution: {integrity: sha512-Z81O3ICUW3g1ljyMVH7ngVAki94yzL0+FS1poipTGHxRshemPMEyvTdNcKy12S9vv5X7+npDrpTjs5TdPhkhNA==}
     peerDependencies:
       mobx: ^6.0.0 || ^5.0.0 || ^4.0.0
     dependencies:
@@ -6913,7 +6913,7 @@ packages:
     resolution: {integrity: sha512-sy+H0pQofO95VDmFLzyaw9xNJU4KTRSwQIGM6+iG3SypAtCiLDzpeG8sJrNCWn2Up9km+KhkvTdbkrdy+yzZdw==}
     requiresBuild: true
     dependencies:
-      tslib: 2.6.1
+      tslib: 2.6.2
     dev: false
     optional: true
 
@@ -7553,12 +7553,6 @@ packages:
   /tslib@1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
-
-  /tslib@2.6.1:
-    resolution: {integrity: sha512-t0hLfiEKfMUoqhG+U1oid7Pva4bbDPHYfJNiB7BiIjRkj1pyC++4N3huJfqY6aRH6VTB0rvtzQwjM4K6qpfOig==}
-    requiresBuild: true
-    dev: false
-    optional: true
 
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
