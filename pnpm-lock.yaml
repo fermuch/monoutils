@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@fermuch/telematree':
     specifier: ^14.0.0
-    version: 14.0.0(cross-fetch@3.1.6)(mobx-keystone@1.8.0)(mobx@6.9.0)
+    version: 14.0.0(cross-fetch@3.1.6)(mobx-keystone@1.8.2)(mobx@6.9.0)
   typed-emitter:
     specifier: ^2.1.0
     version: 2.1.0
@@ -77,8 +77,8 @@ devDependencies:
     specifier: ^2.7.6
     version: 2.7.6(webpack@5.89.0)
   mobx-keystone:
-    specifier: ^1.8.0
-    version: 1.8.0(mobx@6.9.0)
+    specifier: ^1.8.2
+    version: 1.8.2(mobx@6.9.0)
   optimize-css-assets-webpack-plugin:
     specifier: ^6.0.1
     version: 6.0.1(webpack@5.89.0)
@@ -1488,7 +1488,7 @@ packages:
       - supports-color
     dev: true
 
-  /@fermuch/telematree@14.0.0(cross-fetch@3.1.6)(mobx-keystone@1.8.0)(mobx@6.9.0):
+  /@fermuch/telematree@14.0.0(cross-fetch@3.1.6)(mobx-keystone@1.8.2)(mobx@6.9.0):
     resolution: {integrity: sha512-m+J5BGE9SLeOvuoKYXitr8DaFPCDIpL3GZWjn0ZpoxOiDdwOEnr7ynOYgTcZxWfqz7UEh8vpSdYfDoJcmBTjmg==}
     peerDependencies:
       cross-fetch: ^3.1.5
@@ -1502,7 +1502,7 @@ packages:
       formiojs: 4.14.13
       imurmurhash: 0.1.4
       mobx: 6.9.0
-      mobx-keystone: 1.8.0(mobx@6.9.0)
+      mobx-keystone: 1.8.2(mobx@6.9.0)
       pure-uuid: 1.6.3
       typed-emitter: 2.1.0
     transitivePeerDependencies:
@@ -5731,13 +5731,14 @@ packages:
     dev: true
     optional: true
 
-  /mobx-keystone@1.8.0(mobx@6.9.0):
-    resolution: {integrity: sha512-Z81O3ICUW3g1ljyMVH7ngVAki94yzL0+FS1poipTGHxRshemPMEyvTdNcKy12S9vv5X7+npDrpTjs5TdPhkhNA==}
+  /mobx-keystone@1.8.2(mobx@6.9.0):
+    resolution: {integrity: sha512-1+Acy2q5xc+M/IVWovjbCLaF5h+rJQaeB7TcZIabO4cIBA5lSdWO+lBQN3HG1EQ7fCpKnTfYmpCQ5cVBCbYGFA==}
     peerDependencies:
       mobx: ^6.0.0 || ^5.0.0 || ^4.0.0
     dependencies:
       fast-deep-equal: 3.1.3
       mobx: 6.9.0
+      nanoid: 3.3.7
       ts-toolbelt: 9.6.0
       tslib: 2.6.2
 
@@ -5780,17 +5781,16 @@ packages:
     dev: true
     optional: true
 
-  /nanoid@3.3.2:
-    resolution: {integrity: sha512-CuHBogktKwpm5g2sRgv83jEy2ijFzBwMoYA60orPDR7ynsLijJDqgsi4RDGj3OJpy3Ieb+LYwiRmIOGyytgITA==}
-    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
-    hasBin: true
-    dev: true
-
   /nanoid@3.3.6:
     resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
     dev: true
+
+  /nanoid@3.3.7:
+    resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
+    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
 
   /napi-build-utils@1.0.2:
     resolution: {integrity: sha512-ONmRUqK7zj7DWX0D9ADe03wbwOBZxNAfF20PlGfCWQcD3+/MakShIHrMqx9YwPTfxDdF1zLeL+RGZiR9kGMLdg==}
@@ -6490,7 +6490,7 @@ packages:
     resolution: {integrity: sha512-lg6eITwYe9v6Hr5CncVbK70SoioNQIq81nsaG86ev5hAidQvmOeETBqs7jm43K2F5/Ley3ytDtriImV6TpNiSg==}
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
-      nanoid: 3.3.2
+      nanoid: 3.3.6
       picocolors: 1.0.0
       source-map-js: 1.0.2
     dev: true
