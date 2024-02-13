@@ -74,8 +74,8 @@ devDependencies:
     specifier: ^29.7.0
     version: 29.7.0
   mini-css-extract-plugin:
-    specifier: ^2.7.7
-    version: 2.7.7(webpack@5.90.1)
+    specifier: ^2.8.0
+    version: 2.8.0(webpack@5.90.1)
   mobx-keystone:
     specifier: ^1.9.0
     version: 1.9.0(mobx@6.9.0)
@@ -140,7 +140,7 @@ packages:
       slash: 2.0.0
     optionalDependencies:
       '@nicolo-ribaudo/chokidar-2': 2.1.8-no-fsevents.3
-      chokidar: 3.5.3
+      chokidar: 3.6.0
     dev: true
 
   /@babel/code-frame@7.12.11:
@@ -3126,26 +3126,10 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /chokidar@3.5.3:
-    resolution: {integrity: sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==}
-    engines: {node: '>= 8.10.0'}
-    requiresBuild: true
-    dependencies:
-      anymatch: 3.1.2
-      braces: 3.0.2
-      glob-parent: 5.1.2
-      is-binary-path: 2.1.0
-      is-glob: 4.0.3
-      normalize-path: 3.0.0
-      readdirp: 3.6.0
-    optionalDependencies:
-      fsevents: 2.3.2
-    dev: true
-    optional: true
-
   /chokidar@3.6.0:
     resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
     engines: {node: '>= 8.10.0'}
+    requiresBuild: true
     dependencies:
       anymatch: 3.1.2
       braces: 3.0.2
@@ -5882,13 +5866,14 @@ packages:
     dev: true
     optional: true
 
-  /mini-css-extract-plugin@2.7.7(webpack@5.90.1):
-    resolution: {integrity: sha512-+0n11YGyRavUR3IlaOzJ0/4Il1avMvJ1VJfhWfCn24ITQXhRr1gghbhhrda6tgtNcpZaWKdSuwKq20Jb7fnlyw==}
+  /mini-css-extract-plugin@2.8.0(webpack@5.90.1):
+    resolution: {integrity: sha512-CxmUYPFcTgET1zImteG/LZOy/4T5rTojesQXkSNBiquhydn78tfbCE9sjIjnJ/UcjNjOC1bphTCCW5rrS7cXAg==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
       webpack: ^5.0.0
     dependencies:
-      schema-utils: 4.0.0
+      schema-utils: 4.2.0
+      tapable: 2.2.1
       webpack: 5.90.1(webpack-cli@5.1.4)
     dev: true
 
