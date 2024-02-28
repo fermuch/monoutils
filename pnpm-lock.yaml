@@ -74,8 +74,8 @@ devDependencies:
     specifier: ^29.7.0
     version: 29.7.0
   mini-css-extract-plugin:
-    specifier: ^2.8.0
-    version: 2.8.0(webpack@5.90.3)
+    specifier: ^2.8.1
+    version: 2.8.1(webpack@5.90.3)
   mobx-keystone:
     specifier: ^1.9.0
     version: 1.9.0(mobx@6.9.0)
@@ -5853,8 +5853,8 @@ packages:
     dev: true
     optional: true
 
-  /mini-css-extract-plugin@2.8.0(webpack@5.90.3):
-    resolution: {integrity: sha512-CxmUYPFcTgET1zImteG/LZOy/4T5rTojesQXkSNBiquhydn78tfbCE9sjIjnJ/UcjNjOC1bphTCCW5rrS7cXAg==}
+  /mini-css-extract-plugin@2.8.1(webpack@5.90.3):
+    resolution: {integrity: sha512-/1HDlyFRxWIZPI1ZpgqlZ8jMw/1Dp/dl3P0L1jtZ+zVcHqwPhGwaJwKL00WVgfnBy6PWCde9W65or7IIETImuA==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
       webpack: ^5.0.0
