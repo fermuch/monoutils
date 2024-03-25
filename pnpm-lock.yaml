@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@fermuch/telematree':
     specifier: ^14.0.0
-    version: 14.0.0(cross-fetch@3.1.6)(mobx-keystone@1.9.0)(mobx@6.9.0)
+    version: 14.0.0(cross-fetch@3.1.6)(mobx-keystone@1.10.1)(mobx@6.9.0)
   typed-emitter:
     specifier: ^2.1.0
     version: 2.1.0
@@ -77,8 +77,8 @@ devDependencies:
     specifier: ^2.8.1
     version: 2.8.1(webpack@5.91.0)
   mobx-keystone:
-    specifier: ^1.9.0
-    version: 1.9.0(mobx@6.9.0)
+    specifier: ^1.10.1
+    version: 1.10.1(mobx@6.9.0)
   optimize-css-assets-webpack-plugin:
     specifier: ^6.0.1
     version: 6.0.1(webpack@5.91.0)
@@ -1526,7 +1526,7 @@ packages:
       - supports-color
     dev: true
 
-  /@fermuch/telematree@14.0.0(cross-fetch@3.1.6)(mobx-keystone@1.9.0)(mobx@6.9.0):
+  /@fermuch/telematree@14.0.0(cross-fetch@3.1.6)(mobx-keystone@1.10.1)(mobx@6.9.0):
     resolution: {integrity: sha512-m+J5BGE9SLeOvuoKYXitr8DaFPCDIpL3GZWjn0ZpoxOiDdwOEnr7ynOYgTcZxWfqz7UEh8vpSdYfDoJcmBTjmg==}
     peerDependencies:
       cross-fetch: ^3.1.5
@@ -1540,7 +1540,7 @@ packages:
       formiojs: 4.14.13
       imurmurhash: 0.1.4
       mobx: 6.9.0
-      mobx-keystone: 1.9.0(mobx@6.9.0)
+      mobx-keystone: 1.10.1(mobx@6.9.0)
       pure-uuid: 1.6.3
       typed-emitter: 2.1.0
     transitivePeerDependencies:
@@ -5972,8 +5972,8 @@ packages:
     dev: true
     optional: true
 
-  /mobx-keystone@1.9.0(mobx@6.9.0):
-    resolution: {integrity: sha512-EaMpxPM03874cRSofwPlr6mTmSU6zsnXSXCJUZdI42M+/UJKSPYmqR5BDCA/+NRj7dP7ZN+tzp4F0tsV27XZ3g==}
+  /mobx-keystone@1.10.1(mobx@6.9.0):
+    resolution: {integrity: sha512-IRTU462+FMUA4jbS+gkIVP4/72KGLZ6rgCD7gGDel+J7h2BemJgQjk3HT5R8+eGEq1UWcgr6LRv1ww7rdFifVA==}
     peerDependencies:
       mobx: ^6.0.0 || ^5.0.0 || ^4.0.0
     dependencies:
