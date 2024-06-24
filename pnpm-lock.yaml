@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@fermuch/telematree':
     specifier: ^14.0.0
-    version: 14.0.0(cross-fetch@3.1.6)(mobx-keystone@1.10.1)(mobx@6.9.0)
+    version: 14.0.0(cross-fetch@3.1.6)(mobx-keystone@1.10.2)(mobx@6.9.0)
   typed-emitter:
     specifier: ^2.1.0
     version: 2.1.0
@@ -77,8 +77,8 @@ devDependencies:
     specifier: ^2.9.0
     version: 2.9.0(webpack@5.92.1)
   mobx-keystone:
-    specifier: ^1.10.1
-    version: 1.10.1(mobx@6.9.0)
+    specifier: ^1.10.2
+    version: 1.10.2(mobx@6.9.0)
   optimize-css-assets-webpack-plugin:
     specifier: ^6.0.1
     version: 6.0.1(webpack@5.92.1)
@@ -1647,7 +1647,7 @@ packages:
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     dev: true
 
-  /@fermuch/telematree@14.0.0(cross-fetch@3.1.6)(mobx-keystone@1.10.1)(mobx@6.9.0):
+  /@fermuch/telematree@14.0.0(cross-fetch@3.1.6)(mobx-keystone@1.10.2)(mobx@6.9.0):
     resolution: {integrity: sha512-m+J5BGE9SLeOvuoKYXitr8DaFPCDIpL3GZWjn0ZpoxOiDdwOEnr7ynOYgTcZxWfqz7UEh8vpSdYfDoJcmBTjmg==}
     peerDependencies:
       cross-fetch: ^3.1.5
@@ -1661,7 +1661,7 @@ packages:
       formiojs: 4.14.13
       imurmurhash: 0.1.4
       mobx: 6.9.0
-      mobx-keystone: 1.10.1(mobx@6.9.0)
+      mobx-keystone: 1.10.2(mobx@6.9.0)
       pure-uuid: 1.6.3
       typed-emitter: 2.1.0
     transitivePeerDependencies:
@@ -6096,8 +6096,8 @@ packages:
     dev: true
     optional: true
 
-  /mobx-keystone@1.10.1(mobx@6.9.0):
-    resolution: {integrity: sha512-IRTU462+FMUA4jbS+gkIVP4/72KGLZ6rgCD7gGDel+J7h2BemJgQjk3HT5R8+eGEq1UWcgr6LRv1ww7rdFifVA==}
+  /mobx-keystone@1.10.2(mobx@6.9.0):
+    resolution: {integrity: sha512-UjvTITj3s/vBgbBu/G6BS+bdKvQACOvZ8YgE9Msmb3QqRbCIApCatoDuWwFepnvZG8BzKyqwGUc6WCpfT0hfQQ==}
     peerDependencies:
       mobx: ^6.0.0 || ^5.0.0 || ^4.0.0
     dependencies:
@@ -6105,7 +6105,7 @@ packages:
       mobx: 6.9.0
       nanoid: 3.3.7
       ts-toolbelt: 9.6.0
-      tslib: 2.6.2
+      tslib: 2.6.3
 
   /mobx@6.9.0:
     resolution: {integrity: sha512-HdKewQEREEJgsWnErClfbFoVebze6rGazxFLU/XUyrII8dORfVszN1V0BMRnQSzcgsNNtkX8DHj3nC6cdWE9YQ==}
@@ -7922,6 +7922,9 @@ packages:
 
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
+
+  /tslib@2.6.3:
+    resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
 
   /tsutils@3.21.0(typescript@4.9.5):
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
