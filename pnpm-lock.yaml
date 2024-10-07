@@ -41,10 +41,10 @@ importers:
         version: 4.17.10
       '@typescript-eslint/eslint-plugin':
         specifier: ^4.32.0
-        version: 4.33.0(@typescript-eslint/parser@4.33.0(eslint@9.12.0)(typescript@4.9.5))(eslint@9.12.0)(typescript@4.9.5)
+        version: 4.33.0(@typescript-eslint/parser@4.33.0(eslint@9.12.0)(typescript@5.6.2))(eslint@9.12.0)(typescript@5.6.2)
       '@typescript-eslint/parser':
         specifier: ^4.33.0
-        version: 4.33.0(eslint@9.12.0)(typescript@4.9.5)
+        version: 4.33.0(eslint@9.12.0)(typescript@5.6.2)
       babel-eslint:
         specifier: ^10.1.0
         version: 10.1.0(eslint@9.12.0)
@@ -98,10 +98,10 @@ importers:
         version: 5.3.10(webpack@5.95.0(webpack-cli@5.1.4))
       ts-loader:
         specifier: ^9.5.1
-        version: 9.5.1(typescript@4.9.5)(webpack@5.95.0(webpack-cli@5.1.4))
+        version: 9.5.1(typescript@5.6.2)(webpack@5.95.0(webpack-cli@5.1.4))
       typescript:
-        specifier: ^4.9.5
-        version: 4.9.5
+        specifier: ^5.6.2
+        version: 5.6.2
       url-loader:
         specifier: ^4.1.1
         version: 4.1.1(file-loader@6.2.0(webpack@5.95.0(webpack-cli@5.1.4)))(webpack@5.95.0(webpack-cli@5.1.4))
@@ -4132,9 +4132,9 @@ packages:
   typed-emitter@2.1.0:
     resolution: {integrity: sha512-g/KzbYKbH5C2vPkaXGu8DJlHrGKHLsM25Zg9WuC9pMGfuvT+X25tZQWo5fK1BjBm8+UrVE9LDCvaY0CQk+fXDA==}
 
-  typescript@4.9.5:
-    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
-    engines: {node: '>=4.2.0'}
+  typescript@5.6.2:
+    resolution: {integrity: sha512-NW8ByodCSNCwZeghjN3o+JX5OFH0Ojg6sadjEKY4huZ52TqbJTJnDo5+Tw98lSy63NZvi4n+ez5m2u5d4PkZyw==}
+    engines: {node: '>=14.17'}
     hasBin: true
 
   unbox-primitive@1.0.1:
@@ -5769,10 +5769,10 @@ snapshots:
     dependencies:
       '@types/yargs-parser': 21.0.0
 
-  '@typescript-eslint/eslint-plugin@4.33.0(@typescript-eslint/parser@4.33.0(eslint@9.12.0)(typescript@4.9.5))(eslint@9.12.0)(typescript@4.9.5)':
+  '@typescript-eslint/eslint-plugin@4.33.0(@typescript-eslint/parser@4.33.0(eslint@9.12.0)(typescript@5.6.2))(eslint@9.12.0)(typescript@5.6.2)':
     dependencies:
-      '@typescript-eslint/experimental-utils': 4.33.0(eslint@9.12.0)(typescript@4.9.5)
-      '@typescript-eslint/parser': 4.33.0(eslint@9.12.0)(typescript@4.9.5)
+      '@typescript-eslint/experimental-utils': 4.33.0(eslint@9.12.0)(typescript@5.6.2)
+      '@typescript-eslint/parser': 4.33.0(eslint@9.12.0)(typescript@5.6.2)
       '@typescript-eslint/scope-manager': 4.33.0
       debug: 4.3.4
       eslint: 9.12.0
@@ -5780,18 +5780,18 @@ snapshots:
       ignore: 5.2.0
       regexpp: 3.2.0
       semver: 7.3.5
-      tsutils: 3.21.0(typescript@4.9.5)
+      tsutils: 3.21.0(typescript@5.6.2)
     optionalDependencies:
-      typescript: 4.9.5
+      typescript: 5.6.2
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/experimental-utils@4.33.0(eslint@9.12.0)(typescript@4.9.5)':
+  '@typescript-eslint/experimental-utils@4.33.0(eslint@9.12.0)(typescript@5.6.2)':
     dependencies:
       '@types/json-schema': 7.0.15
       '@typescript-eslint/scope-manager': 4.33.0
       '@typescript-eslint/types': 4.33.0
-      '@typescript-eslint/typescript-estree': 4.33.0(typescript@4.9.5)
+      '@typescript-eslint/typescript-estree': 4.33.0(typescript@5.6.2)
       eslint: 9.12.0
       eslint-scope: 5.1.1
       eslint-utils: 3.0.0(eslint@9.12.0)
@@ -5799,15 +5799,15 @@ snapshots:
       - supports-color
       - typescript
 
-  '@typescript-eslint/parser@4.33.0(eslint@9.12.0)(typescript@4.9.5)':
+  '@typescript-eslint/parser@4.33.0(eslint@9.12.0)(typescript@5.6.2)':
     dependencies:
       '@typescript-eslint/scope-manager': 4.33.0
       '@typescript-eslint/types': 4.33.0
-      '@typescript-eslint/typescript-estree': 4.33.0(typescript@4.9.5)
+      '@typescript-eslint/typescript-estree': 4.33.0(typescript@5.6.2)
       debug: 4.3.4
       eslint: 9.12.0
     optionalDependencies:
-      typescript: 4.9.5
+      typescript: 5.6.2
     transitivePeerDependencies:
       - supports-color
 
@@ -5818,7 +5818,7 @@ snapshots:
 
   '@typescript-eslint/types@4.33.0': {}
 
-  '@typescript-eslint/typescript-estree@4.33.0(typescript@4.9.5)':
+  '@typescript-eslint/typescript-estree@4.33.0(typescript@5.6.2)':
     dependencies:
       '@typescript-eslint/types': 4.33.0
       '@typescript-eslint/visitor-keys': 4.33.0
@@ -5826,9 +5826,9 @@ snapshots:
       globby: 11.1.0
       is-glob: 4.0.3
       semver: 7.5.4
-      tsutils: 3.21.0(typescript@4.9.5)
+      tsutils: 3.21.0(typescript@5.6.2)
     optionalDependencies:
-      typescript: 4.9.5
+      typescript: 5.6.2
     transitivePeerDependencies:
       - supports-color
 
@@ -9101,14 +9101,14 @@ snapshots:
 
   tr46@0.0.3: {}
 
-  ts-loader@9.5.1(typescript@4.9.5)(webpack@5.95.0(webpack-cli@5.1.4)):
+  ts-loader@9.5.1(typescript@5.6.2)(webpack@5.95.0(webpack-cli@5.1.4)):
     dependencies:
       chalk: 4.1.2
       enhanced-resolve: 5.15.0
       micromatch: 4.0.5
       semver: 7.5.4
       source-map: 0.7.4
-      typescript: 4.9.5
+      typescript: 5.6.2
       webpack: 5.95.0(webpack-cli@5.1.4)
 
   ts-toolbelt@9.6.0: {}
@@ -9117,10 +9117,10 @@ snapshots:
 
   tslib@2.7.0: {}
 
-  tsutils@3.21.0(typescript@4.9.5):
+  tsutils@3.21.0(typescript@5.6.2):
     dependencies:
       tslib: 1.14.1
-      typescript: 4.9.5
+      typescript: 5.6.2
 
   tunnel-agent@0.6.0:
     dependencies:
@@ -9144,7 +9144,7 @@ snapshots:
     optionalDependencies:
       rxjs: 7.5.5
 
-  typescript@4.9.5: {}
+  typescript@5.6.2: {}
 
   unbox-primitive@1.0.1:
     dependencies:
