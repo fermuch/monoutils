@@ -47,7 +47,7 @@
     "brotli-webpack-plugin": "^1.1.0",
     "compression-webpack-plugin": "^11.1.0",
     "css-loader": "^7.1.2",
-    "eslint": "^9.11.1",
+    "eslint": "^9.12.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.6.0",
     "jest": "^29.7.0",
