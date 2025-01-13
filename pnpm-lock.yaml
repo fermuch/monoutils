@@ -25,8 +25,8 @@ importers:
         specifier: ^7.16.0
         version: 7.16.7(@babel/core@7.26.0)
       '@babel/plugin-transform-typescript':
-        specifier: ^7.26.3
-        version: 7.26.3(@babel/core@7.26.0)
+        specifier: ^7.26.5
+        version: 7.26.5(@babel/core@7.26.0)
       '@babel/polyfill':
         specifier: ^7.12.1
         version: 7.12.1
@@ -243,6 +243,10 @@ packages:
 
   '@babel/helper-plugin-utils@7.25.9':
     resolution: {integrity: sha512-kSMlyUVdWe25rEsRGviIgOWnoT/nfABVWlqt9N19/dIPWViAOW2s9wznP5tURbs/IDuNk4gPy3YdYRgH3uxhBw==}
+    engines: {node: '>=6.9.0'}
+
+  '@babel/helper-plugin-utils@7.26.5':
+    resolution: {integrity: sha512-RS+jZcRdZdRFzMyr+wcsaqOmld1/EqTghfaBGQQd/WnRdzdlvSZ//kF7U8VQTxf1ynZ4cjUcYgjVGx13ewNPMg==}
     engines: {node: '>=6.9.0'}
 
   '@babel/helper-remap-async-to-generator@7.25.9':
@@ -736,8 +740,8 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
-  '@babel/plugin-transform-typescript@7.26.3':
-    resolution: {integrity: sha512-6+5hpdr6mETwSKjmJUdYw0EIkATiQhnELWlE3kJFBwSg/BGIVwVaVbX+gOXBCdc7Ln1RXZxyWGecIXhUfnl7oA==}
+  '@babel/plugin-transform-typescript@7.26.5':
+    resolution: {integrity: sha512-GJhPO0y8SD5EYVCy2Zr+9dSZcEgaSmq5BLR0Oc25TOEhC+ba49vUAGZFjy8v79z9E1mdldq4x9d1xgh4L1d5dQ==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -4588,6 +4592,8 @@ snapshots:
 
   '@babel/helper-plugin-utils@7.25.9': {}
 
+  '@babel/helper-plugin-utils@7.26.5': {}
+
   '@babel/helper-remap-async-to-generator@7.25.9(@babel/core@7.26.0)':
     dependencies:
       '@babel/core': 7.26.0
@@ -4809,7 +4815,7 @@ snapshots:
   '@babel/plugin-syntax-typescript@7.25.9(@babel/core@7.26.0)':
     dependencies:
       '@babel/core': 7.26.0
-      '@babel/helper-plugin-utils': 7.25.9
+      '@babel/helper-plugin-utils': 7.26.5
 
   '@babel/plugin-syntax-unicode-sets-regex@7.18.6(@babel/core@7.26.0)':
     dependencies:
@@ -5117,12 +5123,12 @@ snapshots:
       '@babel/core': 7.26.0
       '@babel/helper-plugin-utils': 7.25.9
 
-  '@babel/plugin-transform-typescript@7.26.3(@babel/core@7.26.0)':
+  '@babel/plugin-transform-typescript@7.26.5(@babel/core@7.26.0)':
     dependencies:
       '@babel/core': 7.26.0
       '@babel/helper-annotate-as-pure': 7.25.9
       '@babel/helper-create-class-features-plugin': 7.25.9(@babel/core@7.26.0)
-      '@babel/helper-plugin-utils': 7.25.9
+      '@babel/helper-plugin-utils': 7.26.5
       '@babel/helper-skip-transparent-expression-wrappers': 7.25.9
       '@babel/plugin-syntax-typescript': 7.25.9(@babel/core@7.26.0)
     transitivePeerDependencies:
