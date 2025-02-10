@@ -25,8 +25,8 @@ importers:
         specifier: ^7.16.0
         version: 7.16.7(@babel/core@7.26.8)
       '@babel/plugin-transform-typescript':
-        specifier: ^7.26.7
-        version: 7.26.7(@babel/core@7.26.8)
+        specifier: ^7.26.8
+        version: 7.26.8(@babel/core@7.26.8)
       '@babel/polyfill':
         specifier: ^7.12.1
         version: 7.12.1
@@ -711,8 +711,8 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
-  '@babel/plugin-transform-typescript@7.26.7':
-    resolution: {integrity: sha512-5cJurntg+AT+cgelGP9Bt788DKiAw9gIMSMU2NJrLAilnj0m8WZWUNZPSLOmadYsujHutpgElO+50foX+ib/Wg==}
+  '@babel/plugin-transform-typescript@7.26.8':
+    resolution: {integrity: sha512-bME5J9AC8ChwA7aEPJ6zym3w7aObZULHhbNLU0bKUhKsAkylkzUdq+0kdymh9rzi8nlNFl2bmldFBCKNJBUpuw==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -5131,7 +5131,7 @@ snapshots:
       '@babel/core': 7.26.8
       '@babel/helper-plugin-utils': 7.26.5
 
-  '@babel/plugin-transform-typescript@7.26.7(@babel/core@7.26.8)':
+  '@babel/plugin-transform-typescript@7.26.8(@babel/core@7.26.8)':
     dependencies:
       '@babel/core': 7.26.8
       '@babel/helper-annotate-as-pure': 7.25.9
